@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.brainasaservice.deeplinker">
+
+    <application
+        android:name=".ui.DeeplinkApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".main.MainActivity"
+            android:label="Deep App"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".deepcontent.DeepContentActivity"
+            android:label="Deep Content"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".deepcustom.DeepCustomActivity"
+            android:label="Deep Custom"
+            android:parentActivityName=".main.MainActivity" />
+
+        <activity android:name=".deeplink.MyDeeplinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <data android:scheme="deep" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
