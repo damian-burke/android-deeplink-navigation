@@ -1,12 +1,10 @@
 package com.brainasaservice.deeplinker.deepcontent
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.NavUtils
 import android.support.v7.app.AppCompatActivity
 import com.brainasaservice.deeplinker.R
-import kotlinx.android.synthetic.main.activity_deep_content.buttonBack
-import kotlinx.android.synthetic.main.activity_deep_content.textTitle
+import kotlinx.android.synthetic.main.activity_deep_content.*
 
 class DeepContentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

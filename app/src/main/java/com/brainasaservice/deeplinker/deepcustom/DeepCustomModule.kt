@@ -10,6 +10,6 @@ interface DeepCustomModule {
     @Binds
     @IntoSet
     fun bindsDeepContentDeeplinkProcessorIntoSet(
-            processor: DeepCustomDeeplinkProcessor
+        processor: DeepCustomDeeplinkProcessor
     ): DeeplinkProcessor
 }

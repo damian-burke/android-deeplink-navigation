@@ -10,6 +10,6 @@ interface MainModule {
     @Binds
     @IntoSet
     fun bindsMainDeeplinkProcessorIntoSet(
-            processor: MainDeeplinkProcessor
-    ): com.brainasaservice.deeplinkprocessor.DeeplinkProcessor
+        processor: MainDeeplinkProcessor
+    ): DeeplinkProcessor
 }

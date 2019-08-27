@@ -9,7 +9,6 @@ import dagger.multibindings.IntoSet
 interface DeepContentModule {
     @Binds
     @IntoSet
-    fun bindsDeepContentDeeplinkProcessorIntoSet(
-            processor: DeepContentDeeplinkProcessor
-    ): com.brainasaservice.deeplinkprocessor.DeeplinkProcessor
+    fun bindsDeepContentDeeplinkProcessorIntoSet(processor: DeepContentDeeplinkProcessor)
+            : DeeplinkProcessor
 }
