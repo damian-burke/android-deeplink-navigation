@@ -8,15 +8,16 @@ import javax.inject.Singleton
 
 @Singleton
 class MainDeeplinkProcessor @Inject constructor(
-        private val context: Context
-) : com.brainasaservice.deeplinkprocessor.DeeplinkProcessor {
-    override fun process(deeplink: String): Boolean {
+    private val context: Context
+) : DeeplinkProcessor {
+    override fun matches(deeplink: String): Boolean = deeplink.contains("/main")
+
+    override fun execute(deeplink: String) {
         println("${this::class.java} processing $deeplink")
 
-        if (deeplink.contains("/main")) {
-            context.startActivity(Intent(context, MainActivity::class.java))
-            return true
-        }
-        return false
+        context.startActivity(Intent(context, MainActivity::class.java).apply {
+            this.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        })
     }
+
 }

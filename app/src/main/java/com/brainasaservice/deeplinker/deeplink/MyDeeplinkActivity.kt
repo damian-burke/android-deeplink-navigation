@@ -1,7 +1,10 @@
 package com.brainasaservice.deeplinker.deeplink
 
 import com.brainasaservice.deeplinker.ui.DeeplinkApp
+import com.brainasaservice.deeplinkprocessor.DeeplinkActivity
+import com.brainasaservice.deeplinkprocessor.DeeplinkHandler
 
-class MyDeeplinkActivity : com.brainasaservice.deeplinkprocessor.DeeplinkActivity() {
-    override fun getDeeplinkHandler(): com.brainasaservice.deeplinkprocessor.DeeplinkHandler = (applicationContext as DeeplinkApp).component.deeplinkHandler()
+class MyDeeplinkActivity : DeeplinkActivity() {
+    override fun getDeeplinkHandler(): DeeplinkHandler =
+        (applicationContext as DeeplinkApp).component.deeplinkHandler()
 }

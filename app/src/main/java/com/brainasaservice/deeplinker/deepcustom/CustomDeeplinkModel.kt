@@ -5,5 +5,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CustomDeeplinkModel(
-        val name: String
+    val name: String
 ) : Parcelable
